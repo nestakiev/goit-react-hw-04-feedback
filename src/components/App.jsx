@@ -51,8 +51,9 @@ export const App = () => {
       <FeedbackOptions options={options} onLeaveFeedback={onLeaveFeedback}/>
         </Section>
         <Section title="Statistics">
-        {total !== 0 && <Statistics good={good} neutral={neutral} bad={bad} total={total} positivePercentage={positivePercentage}/>}
-        {total === 0 && <Notification message="There is no feedback" />}
+        {total === 0 ? 
+                <Notification message="There is no feedback" /> : 
+                <Statistics good={good} neutral={neutral} bad={bad} total={total} positivePercentage={positivePercentage}/>}
         </Section>
       </div>
     );
